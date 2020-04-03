@@ -5,10 +5,10 @@ import "time"
 type Option func(n *Options)
 
 type Options struct {
-	ServiceName    string
-	ServiceVersion string
-	Addrs          []string
-	DialTimeout    time.Duration
+	ServiceName    string        //服务名
+	ServiceVersion string        //服务版本
+	Addrs          []string      //注册中心地址（etcd）
+	DialTimeout    time.Duration //拨号超时时间
 }
 
 func newOptions(opts ...Option) Options {
